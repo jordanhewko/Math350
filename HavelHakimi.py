@@ -9,13 +9,15 @@ def get_largest_element(sequence):
 def remove_last_element(sequence):
 	
 	del sequence[-1]
+	print("New ", end='')
+	print_sequence(sequence)
 	return sequence
 
 def reduce(sequence):
 	
 	largest = get_largest_element(sequence)
 	sequence = remove_last_element(sequence)
-	last_element = len(sequence) - 1
+	last_element = len(sequence)
 
 	if largest > len(sequence):
 		return False
