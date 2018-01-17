@@ -5,7 +5,7 @@ This is a repository for the basic implementation of the algorithms for my Math 
 ## Havel-Hakimi: 
 
 This is not a particularly hard algorithm to implement, so I decided to write it in Python to catch up on the language.
-I haven't really written anything in Python in about 2 years. Eventually I will write this using a recursive algorithm.\
+I haven't really written anything in Python in about 2 years. Eventually I will write this using a recursive algorithm.
 
 Running instructions:
 
