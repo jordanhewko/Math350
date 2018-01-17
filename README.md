@@ -9,7 +9,7 @@ I haven't really written anything in Python in about 2 years. Eventually I will 
 
 ### Running instructions:
 
-  * python3 HavelHakimi.py
+  <pre>Python3 HavelHakimi.py</pre>
 
 # Future implementations:
 
