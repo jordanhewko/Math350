@@ -1,4 +1,4 @@
-This is a repository for the basic implementation of the algorithms for my Math 350 class: Introduction to  graph theory.
+This is a repository for the implementation of the algorithms for my math 350 class: Introduction to  graph theory.
 
 # Current implementations: 
 
