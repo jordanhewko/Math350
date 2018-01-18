@@ -45,11 +45,15 @@ def print_sequence(sequence):
 def get_valid_integer(i):
 	
 	checker = False
+
 	while(checker == False):
+		
 		number = input("enter digit number " + str(i) + ": ") 
+		
 		try:
 			int(number)
 			checker = True
+
 		except ValueError:
 			print("digit must be a number, try again.")
 
@@ -104,7 +108,6 @@ def handle_opt(argv):
 			
 			print("Type Error: sequence_length must be an integer")
 			sys.exit(1)
-
 
 
 def main():
