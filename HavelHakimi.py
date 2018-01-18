@@ -1,4 +1,5 @@
 
+import sys
 def get_largest_element(sequence):
 
 	largest = sequence[len(sequence) - 1]
@@ -9,8 +10,6 @@ def get_largest_element(sequence):
 def remove_last_element(sequence):
 	
 	del sequence[-1]
-	print("New ", end='')
-	print_sequence(sequence)
 	return sequence
 
 def reduce(sequence):
@@ -43,13 +42,26 @@ def print_sequence(sequence):
 
 	print("]")
 
+def get_valid_integer(i):
+	
+	checker = False
+	while(checker == False):
+		number = input("enter digit number " + str(i) + ": ") 
+		try:
+			int(number)
+			checker = True
+		except ValueError:
+			print("digit must be a number, try again.")
+
+	return number		
+
 def build_sequence(size, end=''):
 
 	sequence = []
 
 	for i in range(0,size):
-
-		number = input("enter digit number " + str(i) + ": ") 
+		
+		number = get_valid_integer(i) 
 		sequence.append(int(number))
 
 	sequence.sort()
@@ -75,23 +87,44 @@ def check_handshake_lemma(sequence):
 	else:
 		return True
 
+
+def handle_opt(argv):
+
+	if len(argv) != 2:
+		print("usage: python3 HavelHakimi.py sequence_length")
+		sys.exit(1)
+	
+	else:
+
+		try:
+			out_value = int(argv[1])
+			return argv[1]
+
+		except ValueError:
+			
+			print("Type Error: sequence_length must be an integer")
+			sys.exit(1)
+
+
+
 def main():
 
-	size = input("Enter the length of the sequence: ")
+	size = handle_opt(sys.argv)
 	sequence = build_sequence(int(size))
 	
 	print_sequence(sequence)
 	if (check_handshake_lemma(sequence) == False):
 			print("Sequence is not a graph (handshake lemma)")
-			return
+			sys.exit(1)
 
 	while len(sequence) > 1:
 		is_reducable = reduce(sequence)
 	
-	if is_reducable == False:
-		print("Sequence is not a graph")
+		if is_reducable == False:
+			print("Sequence is not a graph ")
+			sys.exit(1)
 	else:
 		print("Sequence is a graph")
-
+		sys.exit(0)
 
 main()
