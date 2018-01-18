@@ -56,16 +56,38 @@ def build_sequence(size, end=''):
 
 	return sequence
 
+def is_odd(integer):
+
+	if (integer % 2 == 0):
+		return False
+	else:
+		return True
+
+def check_handshake_lemma(sequence):
+
+	count = 0
+	for i in sequence:
+		if (is_odd(i) == True):
+			count += 1 
+
+	if is_odd(count):
+		return False
+	else:
+		return True
+
 def main():
 
 	size = input("Enter the length of the sequence: ")
 	sequence = build_sequence(int(size))
 	
 	print_sequence(sequence)
+	if (check_handshake_lemma(sequence) == False):
+			print("Sequence is not a graph (handshake lemma)")
+			return
+
 	while len(sequence) > 1:
 		is_reducable = reduce(sequence)
-	#is_reducable = reduce(sequence)
-
+	
 	if is_reducable == False:
 		print("Sequence is not a graph")
 	else:
