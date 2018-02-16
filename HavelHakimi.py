@@ -127,18 +127,19 @@ def check_euler(sequence):
 
 	odd_numbers = 0
 	for i in range(0, len(sequence)):
-
 		if (sequence[i] % 2) != 0:
 			odd_numbers += 1
 
 	if odd_numbers == 2:
 		print("Sequence is semi-Eulerian")
+		return True
 	elif odd_numbers > 2:
 		print("Sequence is neither Eulerian or semi-Eulerian")
-	elif odd_numbers == 0:
+		return False
+	else:
 		print("Graph is Eulerian")
+		return True
 
-	return
 
 def main():
 
